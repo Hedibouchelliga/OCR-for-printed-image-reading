@@ -1,2 +1,8 @@
 # OCR-with-API
-This repo. is one of the greastest soltuions for ocr problems(only documents)
+this OCR solution include only printed images ( Licenses plates are not uncluded)
+you can get your own free license key from here : https://ocr.space/ocrapi
+
+
+
+
+
