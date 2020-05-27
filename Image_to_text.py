@@ -4,11 +4,9 @@ import requests
 import io
 import json
 
-img = cv2.imread("data2_img_33.jpg")
+img = cv2.imread("./ImagePath")
 height, width, _ = img.shape
 
-# Cutting image
-# roi = img[0: height, 400: width]
 roi = img
 
 # Ocr
@@ -17,9 +15,9 @@ _, compressedimage = cv2.imencode(".jpg", roi, [1, 90])
 file_bytes = io.BytesIO(compressedimage)
 
 result = requests.post(url_api,
-              files = {"screenshot.jpg": file_bytes},
-              data = {"apikey": "helloworld",
-                      "language": "eng"})
+              files = {"document_name": file_bytes},
+              data = {"apikey": "helloworld",  #the API key is "helloword"
+                      "language": "eng"}) # the language is choosed based on the document
 
 result = result.content.decode()
 result = json.loads(result)
